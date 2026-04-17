@@ -2,9 +2,9 @@
 // Dados Dinâmicos
 // ===========================
 const festivais = [
-  { titulo: "Festival de Teatro de Curitiba", descricao: "Um dos maiores eventos de artes cênicas da América Latina." },
-  { titulo: "Festa da Uva de Colombo", descricao: "Celebração da imigração italiana com música, dança e gastronomia." },
-  { titulo: "Festival de Música de Londrina", descricao: "Evento tradicional que reúne músicos e estudantes de todo o Brasil." }
+  { titulo: "Festival de Teatro de Curitiba", descricao: "Um dos maiores eventos de artes cênicas da América Latina.", imagem: "iTurn0image31" },
+  { titulo: "Festa da Uva de Colombo", descricao: "Celebração da imigração italiana com música, dança e gastronomia.", imagem: "iTurn0image22" },
+  { titulo: "Festival de Música de Londrina", descricao: "Evento tradicional que reúne músicos e estudantes de todo o Brasil.", imagem: "iTurn0image212" }
 ];
 
 // Renderização dos Cards
@@ -13,7 +13,7 @@ festivais.forEach(f => {
   const card = document.createElement("article");
   card.className = "card reveal";
   card.setAttribute("role", "listitem");
-  card.innerHTML = `<h3>${f.titulo}</h3><p>${f.descricao}</p>`;
+  card.innerHTML = `<img src="${f.imagem}" alt="${f.titulo}"><h3>${f.titulo}</h3><p>${f.descricao}</p>`;
   container.appendChild(card);
 });
 
@@ -42,7 +42,7 @@ document.getElementById("toggle-contrast").addEventListener("click", (e) => {
 // Carrossel
 // ===========================
 const track = document.getElementById("carousel-track");
-const imagens = ["img1.jpg", "img2.jpg", "img3.jpg"]; // substitua por imagens reais
+const imagens = ["iTurn0image181", "iTurn0image121", "iTurn0image91"]; 
 imagens.forEach(src => {
   const img = document.createElement("img");
   img.src = src;
@@ -67,8 +67,8 @@ document.querySelector(".prev").addEventListener("click", () => {
 // Accordion
 // ===========================
 const curiosidades = [
-  { titulo: "Culinária típica", conteudo: "O barreado é um prato tradicional do litoral paranaense." },
-  { titulo: "Artesanato", conteudo: "O pinhão inspira diversas peças artesanais." }
+  { titulo: "Culinária típica", conteudo: "O barreado é um prato tradicional do litoral paranaense.", imagem: "iTurn0image61" },
+  { titulo: "Artesanato", conteudo: "O pinhão inspira diversas peças artesanais.", imagem: "iTurn0image154" }
 ];
 
 const accordion = document.getElementById("accordion");
@@ -77,21 +77,4 @@ curiosidades.forEach(c => {
   item.className = "accordion-item";
   item.innerHTML = `
     <div class="accordion-header" tabindex="0">${c.titulo}</div>
-    <div class="accordion-content">${c.conteudo}</div>
-  `;
-  accordion.appendChild(item);
-
-  item.querySelector(".accordion-header").addEventListener("click", () => {
-    const content = item.querySelector(".accordion-content");
-    content.style.display = content.style.display === "block" ? "none" : "block";
-  });
-});
-
-// ===========================
-// Scroll Reveal
-// ===========================
-function revealOnScroll() {
-  document.querySelectorAll(".reveal").forEach(el => {
-    const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 50) {
-      el
+    <div class="accordion-content"><
