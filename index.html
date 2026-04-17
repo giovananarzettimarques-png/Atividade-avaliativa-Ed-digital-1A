@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Festivais e Cultura do Paraná</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header role="banner">
+    <nav aria-label="Menu principal">
+      <h1>Festivais e Cultura do Paraná</h1>
+      <button id="toggle-contrast" aria-pressed="false">Alto Contraste</button>
+      <button id="increase-font" aria-label="Aumentar fonte">A+</button>
+      <button id="decrease-font" aria-label="Diminuir fonte">A-</button>
+    </nav>
+  </header>
+
+  <main id="content" role="main">
+    <!-- Seção Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <h2 id="hero-title">Celebre a diversidade cultural</h2>
+      <p>Descubra os principais festivais e tradições do Paraná.</p>
+    </section>
+
+    <!-- Seção de Cards (renderizados via JS) -->
+    <section id="festivais" aria-labelledby="festivais-title">
+      <h2 id="festivais-title">Principais Festivais</h2>
+      <div class="grid" id="festivais-container" role="list"></div>
+    </section>
+
+    <!-- Carrossel -->
+    <section id="carousel" aria-label="Galeria de imagens">
+      <h2>Galeria Cultural</h2>
+      <div class="carousel" role="region">
+        <button class="carousel-btn prev" aria-label="Imagem anterior">&#10094;</button>
+        <div class="carousel-track" id="carousel-track"></div>
+        <button class="carousel-btn next" aria-label="Próxima imagem">&#10095;</button>
+      </div>
+    </section>
+
+    <!-- Acordeão -->
+    <section id="curiosidades" aria-labelledby="curiosidades-title">
+      <h2 id="curiosidades-title">Curiosidades</h2>
+      <div class="accordion" id="accordion"></div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <p>&copy; 2026 Cultura do Paraná</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
