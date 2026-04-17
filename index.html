@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cultura e Festivais do Paraná</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="accessibility-bar" aria-label="Controles de Acessibilidade">
+        <button onclick="changeFontSize('increase')" aria-label="Aumentar fonte">A+</button>
+        <button onclick="changeFontSize('decrease')" aria-label="Diminuir fonte">A-</button>
+        <button onclick="toggleContrast()" aria-label="Alternar Alto Contraste">Alto Contraste</button>
+    </nav>
+
+    <header>
+        <nav class="main-nav">
+            <div class="logo">Paraná Cultural</div>
+            <ul role="menubar">
+                <li role="none"><a href="#festivais" role="menuitem">Festivais</a></li>
+                <li role="none"><a href="#galeria" role="menuitem">Galeria</a></li>
+                <li role="none"><a href="#faq" role="menuitem">Dúvidas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero reveal">
+            <h1>Descubra a Magia das Tradições Paranaenses</h1>
+            <p>Do litoral ao interior, uma jornada pela identidade e alegria do nosso povo.</p>
+        </section>
+
+        <section id="festivais" class="reveal">
+            <h2>Grandes Festivais</h2>
+            <div id="festivais-container" class="grid-container">
+                </div>
+        </section>
+
+        <section id="galeria" class="reveal" aria-labelledby="carousel-title">
+            <h2 id="carousel-title">Galeria de Eventos</h2>
+            <div class="carousel" role="region" aria-roledescription="carousel">
+                <div id="carousel-track" class="carousel-track">
+                    </div>
+                <button class="carousel-btn prev" aria-label="Anterior">❮</button>
+                <button class="carousel-btn next" aria-label="Próximo">❯</button>
+            </div>
+        </section>
+
+        <section id="faq" class="reveal">
+            <h2>Informações Úteis</h2>
+            <div id="accordion-container">
+                </div>
+        </section>
+    </main>
+
+    <footer class="reveal">
+        <p>&copy; 2023 Paraná Cultural - Explore nossa história.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
