@@ -1,0 +1,125 @@
+/* ===========================
+   Design System
+=========================== */
+:root {
+  --color-primary: #00695c;
+  --color-secondary: #ffb300;
+  --color-bg: #f5f5f5;
+  --color-text: #333;
+  --spacing: 1rem;
+  --radius: 8px;
+}
+
+/* ===========================
+   Alto Contraste
+=========================== */
+body.high-contrast {
+  --color-primary: #000;
+  --color-secondary: #fff;
+  --color-bg: #000;
+  --color-text: #fff;
+}
+
+/* ===========================
+   Layout Base
+=========================== */
+body {
+  font-family: Arial, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  margin: 0;
+  line-height: 1.6;
+}
+
+header, footer {
+  background: var(--color-primary);
+  color: #fff;
+  padding: var(--spacing);
+}
+
+nav button {
+  margin-left: var(--spacing);
+}
+
+/* ===========================
+   Grid Responsivo
+=========================== */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing);
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr); /* <-- editar aqui */
+  }
+}
+
+/* ===========================
+   Cards
+=========================== */
+.card {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: var(--spacing);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* ===========================
+   Carrossel
+=========================== */
+.carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--color-secondary);
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.carousel-btn.prev { left: 0; }
+.carousel-btn.next { right: 0; }
+
+/* ===========================
+   Accordion
+=========================== */
+.accordion-item {
+  border-bottom: 1px solid #ccc;
+}
+
+.accordion-header {
+  background: var(--color-secondary);
+  padding: var(--spacing);
+  cursor: pointer;
+}
+
+.accordion-content {
+  display: none;
+  padding: var(--spacing);
+}
+
+/* ===========================
+   Animações Scroll Reveal
+=========================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
