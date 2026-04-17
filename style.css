@@ -64,6 +64,13 @@ nav button {
   border-radius: var(--radius);
   padding: var(--spacing);
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  border-radius: var(--radius);
+  margin-bottom: var(--spacing);
 }
 
 /* ===========================
@@ -77,6 +84,11 @@ nav button {
 .carousel-track {
   display: flex;
   transition: transform 0.5s ease;
+}
+
+.carousel-track img {
+  width: 100%;
+  flex-shrink: 0;
 }
 
 .carousel-btn {
@@ -110,6 +122,12 @@ nav button {
   padding: var(--spacing);
 }
 
+.accordion-content img {
+  width: 100%;
+  border-radius: var(--radius);
+  margin-top: var(--spacing);
+}
+
 /* ===========================
    Animações Scroll Reveal
 =========================== */
@@ -123,3 +141,4 @@ nav button {
   opacity: 1;
   transform: translateY(0);
 }
+
