@@ -1,60 +1,82 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cultura e Festivais do Paraná</title>
+    <title>Paraná Cultural | Portal de Festivais e Tradições</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="accessibility-bar" aria-label="Controles de Acessibilidade">
-        <button onclick="changeFontSize('increase')" aria-label="Aumentar fonte">A+</button>
-        <button onclick="changeFontSize('decrease')" aria-label="Diminuir fonte">A-</button>
-        <button onclick="toggleContrast()" aria-label="Alternar Alto Contraste">Alto Contraste</button>
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
+    <nav class="acc-toolbar" aria-label="Acessibilidade e Preferências">
+        <div class="container toolbar-grid">
+            <div class="acc-group">
+                <button onclick="adjustFont('inc')" aria-label="Aumentar texto">A+</button>
+                <button onclick="adjustFont('dec')" aria-label="Diminuir texto">A-</button>
+            </div>
+            <div class="acc-group">
+                <button id="theme-toggle" onclick="toggleTheme()" aria-live="polite">
+                    Modo Escuro / Alto Contraste
+                </button>
+            </div>
+        </div>
     </nav>
 
-    <header>
-        <nav class="main-nav">
-            <div class="logo">Paraná Cultural</div>
-            <ul role="menubar">
-                <li role="none"><a href="#festivais" role="menuitem">Festivais</a></li>
-                <li role="none"><a href="#galeria" role="menuitem">Galeria</a></li>
-                <li role="none"><a href="#faq" role="menuitem">Dúvidas</a></li>
-            </ul>
-        </nav>
+    <header role="banner" class="hero">
+        <div class="container">
+            <h1 class="fade-in">Paraná: O Encontro de Culturas</h1>
+            <p class="fade-in-delay">Explore os festivais que definem a identidade do sul do Brasil.</p>
+        </div>
     </header>
 
-    <main>
-        <section class="hero reveal">
-            <h1>Descubra a Magia das Tradições Paranaenses</h1>
-            <p>Do litoral ao interior, uma jornada pela identidade e alegria do nosso povo.</p>
-        </section>
-
-        <section id="festivais" class="reveal">
-            <h2>Grandes Festivais</h2>
-            <div id="festivais-container" class="grid-container">
+    <main id="main-content">
+        <section class="section container" aria-labelledby="sec-festivais">
+            <div class="section-header">
+                <h2 id="sec-festivais">Calendário de Grandes Eventos</h2>
+                <div class="filter-controls">
+                    <label for="category-filter">Filtrar por região:</label>
+                    <select id="category-filter" onchange="filterFestivals(this.value)">
+                        <option value="todos">Todos os Festivais</option>
+                        <option value="litoral">Litoral</option>
+                        <option value="norte">Norte Paranaense</option>
+                        <option value="campos">Campos Gerais / Sul</option>
+                        <option value="curitiba">Curitiba e Região</option>
+                    </select>
                 </div>
-        </section>
-
-        <section id="galeria" class="reveal" aria-labelledby="carousel-title">
-            <h2 id="carousel-title">Galeria de Eventos</h2>
-            <div class="carousel" role="region" aria-roledescription="carousel">
-                <div id="carousel-track" class="carousel-track">
-                    </div>
-                <button class="carousel-btn prev" aria-label="Anterior">❮</button>
-                <button class="carousel-btn next" aria-label="Próximo">❯</button>
             </div>
+            
+            <div id="grid-festivais" class="festivals-grid" role="region" aria-live="polite">
+                </div>
         </section>
 
-        <section id="faq" class="reveal">
-            <h2>Informações Úteis</h2>
-            <div id="accordion-container">
+        <section class="section bg-alt" aria-labelledby="sec-tradicoes">
+            <div class="container">
+                <h2 id="sec-tradicoes">Patrimônio Imaterial</h2>
+                <div class="tabs-container">
+                    <div role="tablist" aria-label="Categorias Culturais" id="tab-list">
+                        </div>
+                    <div id="tab-panels">
+                        </div>
                 </div>
+            </div>
         </section>
     </main>
 
-    <footer class="reveal">
-        <p>&copy; 2023 Paraná Cultural - Explore nossa história.</p>
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div>
+                <h3>Viva o Paraná</h3>
+                <p>O portal oficial da diversidade paranaense.</p>
+            </div>
+            <nav aria-label="Links úteis">
+                <ul>
+                    <li><a href="#">Secretaria de Cultura</a></li>
+                    <li><a href="#">Calendário Oficial</a></li>
+                    <li><a href="#">Mapa do Turismo</a></li>
+                </ul>
+            </nav>
+        </div>
     </footer>
 
     <script src="script.js"></script>
