@@ -1,0 +1,106 @@
+/* --- CONFIGURAÇÕES E VARIÁVEIS --- */
+:root {
+    --primary: #006b33; /* Verde Paraná */
+    --secondary: #f9d71c; /* Amarelo Ouro */
+    --text: #333333;
+    --bg: #ffffff;
+    --radius: 12px;
+    --spacing: 2rem;
+    --transition: all 0.4s ease-out;
+}
+
+/* --- MODO ALTO CONTRASTE --- */
+body.high-contrast {
+    --primary: #ffff00;
+    --secondary: #ffffff;
+    --text: #ffffff;
+    --bg: #000000;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background-color: var(--bg);
+    transition: background 0.3s, color 0.3s;
+}
+
+/* --- LAYOUT GRID/FLEX --- */
+.grid-container {
+    display: grid;
+    /* Edite aqui as colunas do Grid */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing);
+    padding: var(--spacing);
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background: var(--primary);
+    color: white;
+}
+
+/* --- COMPONENTES --- */
+.card {
+    background: var(--bg);
+    border: 2px solid var(--primary);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.accordion-item {
+    border-bottom: 1px solid #ccc;
+    padding: 1rem;
+}
+
+.accordion-header {
+    cursor: pointer;
+    font-weight: bold;
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    color: inherit;
+}
+
+/* --- ANIMAÇÕES (Scroll Reveal) --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: var(--transition);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Barra de Acessibilidade Fixa */
+.accessibility-bar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #eee;
+    padding: 0.5rem;
+    display: flex;
+    gap: 10px;
+}
