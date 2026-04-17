@@ -3,82 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paraná Cultural | Portal de Festivais e Tradições</title>
+    <title>Paraná Versátil | O Coração Cultural do Brasil</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+    <a href="#main-content" class="skip-link">Ir para o conteúdo principal</a>
 
-    <nav class="acc-toolbar" aria-label="Acessibilidade e Preferências">
-        <div class="container toolbar-grid">
-            <div class="acc-group">
-                <button onclick="adjustFont('inc')" aria-label="Aumentar texto">A+</button>
-                <button onclick="adjustFont('dec')" aria-label="Diminuir texto">A-</button>
-            </div>
-            <div class="acc-group">
-                <button id="theme-toggle" onclick="toggleTheme()" aria-live="polite">
-                    Modo Escuro / Alto Contraste
-                </button>
+    <nav class="acc-hud" aria-label="Painel de Acessibilidade">
+        <div class="container hud-flex">
+            <div class="brand">PR<span>CULTURA</span></div>
+            <div class="controls">
+                <button onclick="ui.adjustText('inc')" title="Aumentar Texto">A+</button>
+                <button onclick="ui.adjustText('dec')" title="Diminuir Texto">A-</button>
+                <button onclick="ui.toggleContrast()" id="contrast-btn" title="Modo Escuro">🌓</button>
             </div>
         </div>
     </nav>
 
-    <header role="banner" class="hero">
-        <div class="container">
-            <h1 class="fade-in">Paraná: O Encontro de Culturas</h1>
-            <p class="fade-in-delay">Explore os festivais que definem a identidade do sul do Brasil.</p>
-        </div>
-    </header>
-
-    <main id="main-content">
-        <section class="section container" aria-labelledby="sec-festivais">
-            <div class="section-header">
-                <h2 id="sec-festivais">Calendário de Grandes Eventos</h2>
-                <div class="filter-controls">
-                    <label for="category-filter">Filtrar por região:</label>
-                    <select id="category-filter" onchange="filterFestivals(this.value)">
-                        <option value="todos">Todos os Festivais</option>
-                        <option value="litoral">Litoral</option>
-                        <option value="norte">Norte Paranaense</option>
-                        <option value="campos">Campos Gerais / Sul</option>
-                        <option value="curitiba">Curitiba e Região</option>
-                    </select>
-                </div>
-            </div>
-            
-            <div id="grid-festivais" class="festivals-grid" role="region" aria-live="polite">
-                </div>
-        </section>
-
-        <section class="section bg-alt" aria-labelledby="sec-tradicoes">
-            <div class="container">
-                <h2 id="sec-tradicoes">Patrimônio Imaterial</h2>
-                <div class="tabs-container">
-                    <div role="tablist" aria-label="Categorias Culturais" id="tab-list">
-                        </div>
-                    <div id="tab-panels">
-                        </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-        <div class="container footer-grid">
-            <div>
-                <h3>Viva o Paraná</h3>
-                <p>O portal oficial da diversidade paranaense.</p>
-            </div>
-            <nav aria-label="Links úteis">
-                <ul>
-                    <li><a href="#">Secretaria de Cultura</a></li>
-                    <li><a href="#">Calendário Oficial</a></li>
-                    <li><a href="#">Mapa do Turismo</a></li>
-                </ul>
-            </nav>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+    <header role="banner" class="main-hero">
+        <div class="hero-overlay">
+            <div class="container hero-content">
+                <span class="badge-hero">Explore o Paraná</span>
+                <h1>Tradição que vibra, <br>cultura que acolhe.</h1>
+                <p>Dos campos de pinhão às praias do litoral, descubra a energia dos nossos festivais.</p>
+                <div class="hero
